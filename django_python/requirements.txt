@@ -1,0 +1,12 @@
+# Python 3.7 and 3.11 compatible
+# - Python 3.7: use Django 3.2.x (last to support 3.7)
+# - Python 3.11: Django 3.2.x may work; if not use requirements-py311.txt
+
+# Core
+Django>=2.2,<4
+
+# Production server (e.g. Render)
+gunicorn>=20.0,<22
+
+# Static files
+whitenoise>=5.2,<7
