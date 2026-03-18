@@ -39,6 +39,18 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+# CSRF: allow requests from Render (Django 4+ checks Origin header)
+CSRF_TRUSTED_ORIGINS = [
+    'https://compsci5012-group-ai-assignment-u6oq.onrender.com',
+    'http://compsci5012-group-ai-assignment-u6oq.onrender.com',
+]
+_render_url = os.environ.get('RENDER_EXTERNAL_URL', '').rstrip('/')
+if _render_url and _render_url not in CSRF_TRUSTED_ORIGINS:
+    CSRF_TRUSTED_ORIGINS.append(_render_url)
+    _render_http = _render_url.replace('https://', 'http://')
+    if _render_http not in CSRF_TRUSTED_ORIGINS:
+        CSRF_TRUSTED_ORIGINS.append(_render_http)
+
 
 # Application definition
 
