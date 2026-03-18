@@ -1,8 +1,7 @@
 # Optional: use on Python 3.11 if Django 3.2 has compatibility issues
 # Install: pip install -r requirements-py311.txt
 
-# Django 3.2.x is the last version that supports django.conf.urls.url
-# Using 3.2.20 (LTS, security fixes until April 2024)
-Django>=3.2,<3.3
+# Django 4.2.x (LTS, compatible with Python 3.14)
+Django>=4.2,<4.3
 gunicorn>=20.0,<22
 whitenoise>=5.2,<7
